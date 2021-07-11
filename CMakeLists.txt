@@ -476,7 +476,7 @@ source_group("source\\UIComponents\\PropertyEditors" FILES ${SOURCES_UICOMPONENT
 source_group("source\\UIComponents\\WindowManagers" FILES ${SOURCES_UICOMPONENTS_CTRLRWINDOWMANAGERS})
 
 target_include_directories(ctrlr PRIVATE 
-	"${CMAKE_CURRENT_SOURCE_DIR}/Source/Misc/Lua/include"
+	"${CMAKE_CURRENT_SOURCE_DIR}/Source/Misc/lua/include"
 	"${CMAKE_CURRENT_SOURCE_DIR}/Source/Misc/luabind"
 	"${CMAKE_CURRENT_SOURCE_DIR}/Source/Misc/include"
 	"${CMAKE_CURRENT_SOURCE_DIR}/Source/Misc"
