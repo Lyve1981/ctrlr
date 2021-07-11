@@ -492,3 +492,5 @@ target_include_directories(ctrlr PRIVATE
 	"${CMAKE_CURRENT_SOURCE_DIR}/JuceLibraryCode"
 	"${CMAKE_CURRENT_SOURCE_DIR}/JUCE/modules"
 )
+
+target_compile_definitions(ctrlr PUBLIC BOOST_NO_AUTO_PTR)
