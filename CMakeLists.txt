@@ -441,6 +441,7 @@ target_sources(ctrlr PRIVATE
 	${SOURCES_MIDI}
 	${SOURCES_NATIVE}
 	${SOURCES_NATIVE_PLATFORM}
+	${SOURCES_PLUGIN}
 	${SOURCES_UICOMPONENTS}
 	${SOURCES_UICOMPONENTS_APPLICATIONWINDOW}
 	${SOURCES_UICOMPONENTS_CTRLRCOMPONENTS}
@@ -465,6 +466,8 @@ source_group("source\\Lua\\Methods" FILES ${SOURCES_LUA_METHODS})
 source_group("source\\MIDI" FILES ${SOURCES_MIDI})
 
 source_group("source\\Native" FILES ${SOURCES_NATIVE} ${SOURCES_NATIVE_PLATFORM})
+
+source_group("source\\Plugin" FILES ${SOURCES_PLUGIN})
 
 source_group("source\\UIComponents" FILES ${SOURCES_UICOMPONENTS})
 source_group("source\\UIComponents\\ApplicationWindow" FILES ${SOURCES_UICOMPONENTS_APPLICATIONWINDOW})
