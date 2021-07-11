@@ -1,5 +1,8 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.16)
 project(ctrlr)
+
+add_subdirectory(Source/Misc/lua)
+add_subdirectory(Source/Misc/luabind)
 
 add_library(ctrlr STATIC)
 
@@ -478,11 +481,8 @@ source_group("source\\UIComponents\\Panel" FILES ${SOURCES_UICOMPONENTS_CTRLRPAN
 source_group("source\\UIComponents\\PropertyEditors" FILES ${SOURCES_UICOMPONENTS_CTRLRPROPERTYEDITORS})
 source_group("source\\UIComponents\\WindowManagers" FILES ${SOURCES_UICOMPONENTS_CTRLRWINDOWMANAGERS})
 
-target_include_directories(ctrlr PRIVATE 
-	"${CMAKE_CURRENT_SOURCE_DIR}/Source/Misc/lua/include"
-	"${CMAKE_CURRENT_SOURCE_DIR}/Source/Misc/luabind"
+target_include_directories(ctrlr PUBLIC 
 	"${CMAKE_CURRENT_SOURCE_DIR}/Source/Misc/include"
-	"${CMAKE_CURRENT_SOURCE_DIR}/Source/Misc"
 	"${CMAKE_CURRENT_SOURCE_DIR}/Source/Core"
 	"${CMAKE_CURRENT_SOURCE_DIR}/Source/MIDI"
 	"${CMAKE_CURRENT_SOURCE_DIR}/Source/Lua"
@@ -493,4 +493,6 @@ target_include_directories(ctrlr PRIVATE
 	"${CMAKE_CURRENT_SOURCE_DIR}/JUCE/modules"
 )
 
-target_compile_definitions(ctrlr PUBLIC BOOST_NO_AUTO_PTR)
+set_property(TARGET ctrlr PROPERTY CXX_STANDARD 11)
+
+target_link_libraries(ctrlr PUBLIC luabind)
